@@ -8,8 +8,8 @@ function getId(urlPath) {
 exports.handler = (event, context) => {
   
   console.log(event.path)
-  console.log( getId(event.path))
-  console.log( JSON.parse(event.body) )
+  //console.log( getId(event.path))
+  //console.log( JSON.parse(event.body) )
   
   return fetch("http://94.76.218.170:8080/wp-json/wp/v2/token", {
     headers: {
