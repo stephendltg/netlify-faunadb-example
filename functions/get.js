@@ -3,9 +3,14 @@ let fetch = require("node-fetch")
 
 exports.handler = (event, context) => {
   
-  console.log(event.path, context)
+  console.log(event.path)
   
-  return fetch("https://itunes.apple.com/search?term=queen")
+  return fetch("http://94.76.218.170:8080/wp-json", {
+    headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Basic ' + Buffer.from('epyo:epyois100%MAGIC', "utf8").toString("base64")
+    }
+  })
 	.then(res => res.json())
 	.then( data =>{
 	  return {
